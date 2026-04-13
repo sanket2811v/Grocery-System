@@ -81,7 +81,7 @@ import { Link } from "react-router-dom";
 
 const MainBanner = () => {
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden rounded-2xl">
 
       {/* Desktop Image */}
       <img
@@ -98,20 +98,20 @@ const MainBanner = () => {
       />
 
       {/* Overlay Content */}
-      <div className="absolute inset-0 flex flex-col justify-center items-start px-6 md:px-16 lg:px-24">
+      <div className="absolute inset-0 flex flex-col justify-center items-start px-4 sm:px-6 md:px-16 lg:px-24">
 
         {/* Heading */}
-        <h1 className="text-2xl md:text-5xl font-bold text-gray-800 max-w-lg leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 max-w-80 sm:max-w-md md:max-w-lg leading-tight">
           Freshness You Can Trust, Savings You Will Love!
         </h1>
 
         {/* Buttons */}
-        <div className="flex items-center mt-6 font-medium">
+        <div className="flex flex-wrap items-center mt-4 sm:mt-6 gap-2 sm:gap-0 font-medium">
 
           {/* Shop Now Button */}
           <Link
             to="/products"
-            className="group flex items-center gap-2 px-7 md:px-9 py-3 bg-primary hover:bg-primary-dull transition rounded text-white cursor-pointer"
+            className="group flex items-center gap-2 px-5 sm:px-7 md:px-9 py-2.5 sm:py-3 bg-primary hover:bg-primary-dull transition rounded text-white cursor-pointer text-sm sm:text-base"
           >
             Shop now
             <img

@@ -151,7 +151,7 @@ const ProductDetails = () => {
 
     return (
         <div className="mt-12">
-            <p>
+            <p className="text-sm md:text-base break-words">
                 <Link to={"/"}>Home</Link> /
                 <Link to={"/products"}> Products</Link> / 
                 <Link to={`/products/${catSlug}`}>
@@ -160,21 +160,21 @@ const ProductDetails = () => {
                 <span className="text-primary"> {product.name}</span>
             </p>
 
-            <div className="flex flex-col md:flex-row gap-16 mt-4">
-                <div className="flex gap-3">
-                    <div className="flex flex-col gap-3">
+            <div className="flex flex-col md:flex-row gap-8 md:gap-16 mt-4">
+                <div className="flex flex-col-reverse sm:flex-row gap-3">
+                    <div className="flex sm:flex-col gap-3 overflow-x-auto sm:overflow-visible">
                         {product.image.map((image, index) => (
                             <div
                                 key={index}
                                 onClick={() => setThumbnail(image)}
-                                className="border max-w-24 border-gray-500/30 rounded overflow-hidden cursor-pointer"
+                                className="border w-20 sm:max-w-24 border-gray-500/30 rounded overflow-hidden cursor-pointer shrink-0"
                             >
                                 <img src={image} alt={`Thumbnail ${index + 1}`} />
                             </div>
                         ))}
                     </div>
 
-                    <div className="border border-gray-500/30 max-w-100 rounded overflow-hidden">
+                    <div className="border border-gray-500/30 w-full max-w-full sm:max-w-100 rounded overflow-hidden">
                         <img
                             src={thumbnail}
                             alt="Selected product"
@@ -184,7 +184,7 @@ const ProductDetails = () => {
                 </div>
 
                 <div className="text-sm w-full md:w-1/2">
-                    <h1 className="text-3xl font-medium">{product.name}</h1>
+                    <h1 className="text-2xl md:text-3xl font-medium">{product.name}</h1>
 
                     <div className="flex items-center gap-0.5 mt-1">
                         {Array(5).fill("").map((_, i) => (
@@ -217,7 +217,7 @@ const ProductDetails = () => {
                         ))}
                     </ul>
 
-                    <div className="flex items-center mt-10 gap-4 text-base">
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center mt-10 gap-3 sm:gap-4 text-base">
                         <button
                             onClick={() => addToCart(pid)}
                             className="w-full py-3.5 cursor-pointer font-medium bg-gray-100 text-gray-800/80 hover:bg-gray-200 transition"

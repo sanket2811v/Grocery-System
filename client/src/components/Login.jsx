@@ -67,14 +67,14 @@ const Login = () => {
         <form
             onSubmit={handleSubmit}
             onClick={(e) => e.stopPropagation()} // ✅ FIXED
-            className="w-full sm:w-[350px] text-center bg-white border border-gray-200 rounded-2xl px-8 shadow-md"
+            className="w-[92vw] max-w-md text-center bg-white border border-gray-200 rounded-2xl px-5 sm:px-8 shadow-md"
         >
           {/* Title */}
-          <h1 className="text-gray-800 text-3xl mt-10 font-medium">
+          <h1 className="text-gray-800 text-2xl sm:text-3xl mt-8 sm:mt-10 font-medium">
             {state === "login" ? "Login" : "Sign up"}
           </h1>
 
-          <p className="text-primary text-sm mt-2">
+          <p className="text-primary text-sm mt-1.5 sm:mt-2">
             Please sign in to continue
           </p>
 
@@ -151,7 +151,7 @@ const Login = () => {
             onClick={() =>
               setState(prev => prev === "login" ? "register" : "login")
             }
-            className="text-primary text-sm mt-3 mb-11 cursor-pointer"
+            className="text-primary text-sm mt-3 mb-8 sm:mb-11 cursor-pointer"
           >
             {state === "login"
               ? "Don't have an account?"
@@ -164,9 +164,9 @@ const Login = () => {
       </div>
 
       {/* Background blobs (unchanged) */}
-      <div className='fixed inset-0 -z-10 pointer-events-none'>
-        <div className='absolute left-1/2 top-20 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-tr from-indigo-800/20 to-transparent rounded-full blur-3xl' />
-        <div className='absolute right-12 bottom-10 w-[400px] h-[200px] bg-gradient-to-bl from-indigo-700/20 to-transparent rounded-full blur-2xl' />
+      <div className='fixed inset-0 -z-10 pointer-events-none overflow-hidden'>
+        <div className='absolute left-1/2 top-12 sm:top-20 -translate-x-1/2 w-[88vw] sm:w-[600px] h-[220px] sm:h-[300px] bg-gradient-to-tr from-indigo-800/20 to-transparent rounded-full blur-3xl' />
+        <div className='absolute right-2 sm:right-12 bottom-6 sm:bottom-10 w-[72vw] sm:w-[400px] h-[150px] sm:h-[200px] bg-gradient-to-bl from-indigo-700/20 to-transparent rounded-full blur-2xl' />
       </div>
     </div>
   );
